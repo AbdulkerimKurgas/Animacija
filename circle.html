@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #050210;
+  transform: translateY(200px);
+}
+
+.div {
+  width: 100px;
+  height: 100px;
+  background-color: #050210;
+  border-radius: 50%;
+  transform: translateX(0px);
+  animation: pulse 1s linear 0s infinite;
+  position: fixed;
+}
+
+@keyframes pulse {
+  0%{
+    background-color: #050210;
+transform: scale(0.0);
+  }
+
+  100%{
+    background-color: #050210;
+transform: scale(4.3);
+  }
+}
+
+.circle {
+ position: relative;
+ width: 500px;
+ height: 500px;
+ background: linear-gradient( #fb5dad, #55fb9f, #b97aff);
+ border-radius: 100%;
+ animation: animate 1s linear 0s infinite
+}
+
+@keyframes animate {
+  from {
+transform: rotate(0deg);
+  }
+
+  to{
+transform: rotate(360deg);
+  }
+}
+
+.circle::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  bottom: 35px;
+  left: 35px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.element::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  bottom: 35px;
+  left: 35px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+
+.circle span {
+ position: absolute;
+ height: 100%;
+ width: 100%;
+ background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+ border-radius: 50%;
+}
+
+.circle span:nth-child(1) {
+  filter: blur(5px);
+}
+
+.circle span:nth-child(2) {
+  filter: blur(20px);
+}
+
+.circle span:nth-child(3) {
+  filter: blur(20px);
+}
+
+.circle span:nth-child(4) {
+  filter: blur(65px);
+}
+  </style>
+</head>
+<body>
+  <div class="circle">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="div"></div>
+</body>
+</html>
